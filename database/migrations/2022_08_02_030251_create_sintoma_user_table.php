@@ -14,13 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users_sintoma', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_sintoma');
-            $table->unsignedBigInteger('id_user');
+            $table->id();
+            $table->unsignedBigInteger('sintoma_id');
+            $table->unsignedBigInteger('users_id');
         
-            $table->foreign('id_sintoma')->references('id')->on('sintoma')
+            $table->foreign('sintoma_id')->references('id')->on('sintoma')
                         ->onUpdate('cascade')->onDelete('cascade');
                         
-            $table->foreign('id_user')->references('id')->on('users')
+            $table->foreign('users_id')->references('id')->on('users')
                         ->onUpdate('cascade')->onDelete('cascade');
         
         });

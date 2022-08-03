@@ -35,12 +35,12 @@ class User extends Authenticatable
 
     public function sintoma()
     {
-      return $this->belongsToMany(Producto::class);
+      return $this->belongsToMany('App/Models/Sintoma');
     }
 
     public function notificacion()
     {
-      return $this->belongsToMany(Notificacion::class);
+      return $this->belongsToMany('App/Models/Notificacion');
     }
 
 }
