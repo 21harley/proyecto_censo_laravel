@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('users/create', [UserController::class,'create' ])->name('users.create');
+
+Route::get('users/{user}/create_sintomas', [UserController::class,'create_sintomas' ])->name('users.sintomas');
+Route::get('users/{user}', [UserController::class,'show' ])->name('users.show');
+
+Route::put('users/{user}',[UserController::class,'store_sintoma'])->name('users.sintomas');
+
+Route::post('users', [UserController::class,'store'])->name('users.store');
+
+
+
+

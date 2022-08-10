@@ -28,6 +28,7 @@ return new class extends Migration
             $table->date('create_user');
             $table->string('url_img')->nullable();
             $table->string('virus')->nullable();
+			$table->timestamps();
         });
     }
 

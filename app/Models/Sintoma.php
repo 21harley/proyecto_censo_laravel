@@ -13,9 +13,11 @@ class Sintoma extends Model
         'descripcion'
     ];
 
-    public function user()
+    /*public function user()
     {
-      return $this->belongsToMany('App/Models/User');
-    }
+     return $this->belongsToMany('App/Models/User');
+   
+ 
+   }*/
 
 }
