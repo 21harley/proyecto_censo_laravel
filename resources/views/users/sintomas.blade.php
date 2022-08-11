@@ -3,7 +3,7 @@
 @section('title','Crear usuario')
 
 @section('content')
-	<h1>Bienvenido a la creacioooooooooooooooon</h1>
+	<h1 class="title">Registre sintomas</h1>
 	
 	
 		
@@ -16,46 +16,38 @@
 		
 		
 <?php //Ciclos con blade ?>
-		
-		Seleccione el virus que presenta:
-		
-		@foreach ($virus->all() as $obj)
-			
-			<br>
-		
-			{{$obj->nombre;}}<input type="checkbox" name="{{$obj->nombre;}}" value="{{$obj->id}}" id="">
-		
-		@endforeach
-		
-		
-		<br>
-		<br>
-		Selecciona los síntomas que presenta:
-		<br>
-		
-		@foreach ($sintomas->all() as $obj)
-			
-			<br>
-		
-			{{$obj->nombre;}}<input type="checkbox" name="{{$obj->nombre;}}" value="{{$obj->id}}" id="">
-		
-		@endforeach
-		
-		
-		<br>
-		<br>
-		<label>
-			Añadir un síntoma: 
-			<br>
-			<input type="text" name="nuevo_sintoma">
-			|<br>
-		</label>
-		
+	<div class="form-sintomas-create">
+		<div>
+			<h4>Seleccione el virus que presenta:</h4>
 				
-		<br>
-		
-		<button type="submit">Enviar formulario</button>
-		
-		
+			@foreach ($virus->all() as $obj)
+				
+				<div class="form-sintomas-create__item">
+					<label>{{$obj->nombre;}}</label><input type="checkbox" name="{{$obj->nombre;}}" value="{{$obj->id}}" id="">
+				</div>
+				
+			
+			@endforeach
+		</div>
+		<div>
+			<h4>Selecciona los síntomas que presenta:</h4>
+				
+			@foreach ($sintomas->all() as $obj)
+			   
+			   <div class="form-sintomas-create__item">
+					<label>{{$obj->nombre;}}</label><input type="checkbox" name="{{$obj->nombre;}}" value="{{$obj->id}}" id="">
+			   </div>
+			
+			@endforeach
+		</div>
+		<div class="form-sintomas-create__item">
+			<label>Añadir un síntoma:</label> <br> <br> <input type="text" name="nuevo_sintoma">
+		</div>
+	</div>
+
+	<div class="pos-button">
+		<button type="submit" class="buttom-submit">Enviar formulario</button>
+	</div>
+
 	</form>
 @endsection 
