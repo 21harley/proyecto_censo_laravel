@@ -9,14 +9,13 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-	public function index(){
-		return view('welcome');
+	public function index(User $user){
+		
+		return "coca cola";
+		
 	}
 
     public function show(User $user){
-	
-		
-		
 		
 		return view('users.show',compact('user'));
 	}
@@ -27,10 +26,6 @@ class UserController extends Controller
 	}
 	
 	public function create_menor(Request $request){
-		
-		
-		
-		
 		
 		return view('users.create_menor',compact('request'));
 	}
@@ -57,8 +52,7 @@ class UserController extends Controller
 		
 		
 	}
-	
-	
+		
 	public function store(Request $request){
 		
 		$user=new User();
@@ -83,6 +77,17 @@ class UserController extends Controller
 		return view('welcome');
 	}
 	
+	public function login(){
 	
+		return view('users.login');
+	}		
 	
+	public function loged(Request $request){
+		
+		
+		
+		return $request;
+
+		
+	}
 }

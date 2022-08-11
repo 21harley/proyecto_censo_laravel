@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SintomaController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +24,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+//*****ADMINS**********
+
+Route::get('index', [AdminController::class,'index'])->name('admins.index');
+
+
 //****USERS***********
 
 //Para mostrar
@@ -30,6 +36,8 @@ Route::get('users/create', [UserController::class,'create' ])->name('users.creat
 Route::get('users/{user}', [UserController::class,'show' ])->name('users.show');
 
 Route::get('users/create/menor_de_edad', [UserController::class,'create_menor'])->name('users.menor.create');
+
+Route::get('index/{user}', [UserController::class,'index'])->name('users.index');
 
 
 //Para ingresar
@@ -63,11 +71,12 @@ Route::post('notificacion', [NewsController::class,'store'])->name('notificacion
 //***Prueba
 
 
-Route::get('prueba', function(){
-	return "Has accedido correctamente a la ruta";
-})->middleware('age');
 
-Route::get('no-autorizado', function(){
-	return "No permitido a la ruta";
-});
+
+//**
+
+Route::get('login', [UserController::class,'login'])->name('users.login');
+
+Route::post('login', [UserController::class,'loged'])->name('users.loged')->middleware('registered');
+
 
