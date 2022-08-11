@@ -29,6 +29,10 @@ Route::get('/', function () {
 Route::get('index', [AdminController::class,'index'])->name('admins.index');
 
 
+
+Route::get('/home', function () {
+    return view('home');
+});
 //****USERS***********
 
 //Para mostrar

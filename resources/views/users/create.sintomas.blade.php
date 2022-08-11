@@ -13,37 +13,25 @@
 		@csrf
 		
 		@method('put')
-		
-		
-		
-		<input type="hidden" name="id" value="{{$user->id}}">
+		<div class="form-sistomas">
+			<div>
+				<label>Virus</label><input type="text" name="virus">
+			</div>
+			<input type="hidden" name="id" value="{{$user->id}}">
+					
+			<div>
+				<label>Síntoma:</label><input  type="text" name="sintoma" >
+			</div>
+			
+			<div>
+				<label>Añadir un síntoma: </label><input type="text" name="nuevo_sintoma">
+			</div>
+		</div>
+
 				
-		<label>
-			Virus 
-			<br>
-			<input type="text" name="virus">
-			<br>
-		</label>
-		
-		<label>
-			Síntoma:
-			<br>			
-			<input  type="text" name="sintoma" >
-			<br>
-		</label>
-		
-		<label>
-			Añadir un síntoma: 
-			<br>
-			<input type="text" name="nuevo_sintoma">
-			|<br>
-		</label>
-		
-				
-		<br>
-		
-		<button type="submit">Enviar formulario</button>
-		
+		<div class="pos-button">
+			<button type="submit" class="buttom-submit">Enviar formulario</button>
+		</div>
 		
 	</form>
 @endsection 

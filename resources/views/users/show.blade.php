@@ -4,34 +4,34 @@
 
 @section('content')
 
-
-	<h1>Bienvenido al curso {{$user->nombre}}</h1>
-	<br>
-	
-	Usted posee el virus:
-	
-	
-	
+<div class="container">
+<div class="container__grid">
+	<h1 class="title">Bienvenido al curso {{$user->nombre}}</h1>
+<div class="container__item">
+	<h3>Usted posee el virus:</h3>
+	<ul>
 	@foreach($user->enfermedad as $role)
-		<ul>
+		
 		<li>{{$role->nombre}}</li>
-		</ul>
+		
 	@endforeach
-	
-	<br>
-	<br>
-	
-	Usted ha presentado los siguientes sintomas:
-	
-	<br>
-	
+    </ul>
+</div>
+
+<div class="container__item">
+	<h3>Usted ha presentado los siguientes sintomas:</h3>
+	<ul>
 	@foreach($user->sintoma as $role)
-		<ul>
 		<li>{{$role->nombre}}</li>
-		</ul>
 	@endforeach
-	
+    </ul>
+
+</div>
+<div class="container__item">
 	<a href="">Editar curso</a>
 	<p><strong>Categoria: 
 	</strong>{{$user->nombre}}</p>
+</div>
+</div>
+</div>
 @endsection 
