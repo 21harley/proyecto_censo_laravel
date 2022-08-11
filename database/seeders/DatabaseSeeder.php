@@ -32,9 +32,6 @@ class DatabaseSeeder extends Seeder
 		$user->dire_localidad="admin";
 		$user->tele_fijo="000";
 		$user->tele_movil="000";
-		$user->create_user="2022-10-08";
-		$user->url_img="000";
-		$user->virus="admin";
 		$user->admin=1;
 		
 		$user->save();

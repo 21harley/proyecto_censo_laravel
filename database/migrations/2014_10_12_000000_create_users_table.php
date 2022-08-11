@@ -25,9 +25,6 @@ return new class extends Migration
             $table->string('dire_localidad');
             $table->string('tele_fijo');
             $table->string('tele_movil');
-            $table->date('create_user');
-            $table->string('url_img')->nullable();
-            $table->string('virus')->nullable();
 			$table->integer('admin');
 		
         });

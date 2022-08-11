@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SintomaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,20 +21,26 @@ use App\Http\Controllers\NewsController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 //****USERS***********
 
 //Para mostrar
 Route::get('users/create', [UserController::class,'create' ])->name('users.create');
-Route::get('users/{user}/create_sintomas', [UserController::class,'create_sintomas' ])->name('users.sintomas');
 Route::get('users/{user}', [UserController::class,'show' ])->name('users.show');
 
-//Para modificar
-Route::put('users/{user}',[UserController::class,'store_sintoma'])->name('users.sintomas');
+Route::post('users/create/menor_de_edad', [UserController::class,'create_menor'])->name('users.menor.create');
+
 
 //Para ingresar
-Route::post('users', [UserController::class,'store'])->name('users.store');
+Route::post('users', [UserController::class,'store'])->name('users.store')->middleware('age');
+//Route::post('users', [UserController::class,'store_menor'])->name('users.menor.store');
+
+//********Sintomas y enfermedades *************
+
+
+Route::get('users/{user}/create_sintomas', [SintomaController::class,'create_sintomas' ])->name('users.sintomas');
+Route::put('users/{user}',[SintomaController::class,'store_sintoma'])->name('users.sintomas');
 
 //*******Publicacion***********
 
@@ -48,3 +55,16 @@ Route::get('notificacion/create', [NewsController::class,'create' ])->name('noti
 
 //Ojo con el return de los stores se utiliza tambien redirect que es un metodo
 Route::post('notificacion', [NewsController::class,'store'])->name('notificacion.store');
+
+
+//***Prueba
+
+
+Route::get('prueba', function(){
+	return "Has accedido correctamente a la ruta";
+})->middleware('age');
+
+Route::get('no-autorizado', function(){
+	return "No permitido a la ruta";
+});
+

@@ -32,9 +32,6 @@ class User extends Authenticatable
         'dire_localidad',
         'tele_fijo',
         'tele_movil',
-        'create_user',
-        'url_img',
-        'virus',
 		'admin'
     ];
 

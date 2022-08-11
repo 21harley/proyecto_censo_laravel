@@ -7,7 +7,7 @@
 	
 	
 	
-	<form action="{{route('users.store')}}" method="POST">
+	<form action="" method="POST">
 		
 		@csrf
 		
@@ -57,13 +57,35 @@
 		
 		
 		
-		
 		<label>
-		¿Eres menor de edad?
-			<br>			
-			<input type="checkbox" name="age" value="18" id="">
+			dire_municipio: 
+			<br>
+			<input type="text" name="dire_municipio">
 			<br>
 		</label>
+		
+		<label>
+			dire_localidad
+			<br>			
+			<input  type="text" name="dire_localidad" >
+			<br>
+		</label><
+		
+		<label>
+			tele_fijo: 
+			<br>
+			<input type="text" name="tele_fijo">
+			|<br>
+		</label>
+		
+		<label>
+			tele_movil: 
+			<br>
+			<input type="text" name="tele_movil">
+			<br>
+		</label>
+		
+		
 	
 		
 	
