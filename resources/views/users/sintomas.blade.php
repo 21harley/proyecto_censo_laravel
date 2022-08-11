@@ -6,7 +6,7 @@
 	<h1>Bienvenido a la creacioooooooooooooooon</h1>
 	
 	
-	
+		
 	<form action="{{route('users.sintomas',$user)}}" method="post">
 		
 	
@@ -14,20 +14,36 @@
 		
 		@method('put')
 		
-		<label>
-			Virus 
-			<br>
-			<input type="text" name="virus">
-			<br>
-		</label>
 		
-		<label>
-			Síntoma:
-			<br>			
-			<input  type="text" name="sintoma" >
-			<br>
-		</label>
+<?php //Ciclos con blade ?>
 		
+		Seleccione el virus que presenta:
+		
+		@foreach ($virus->all() as $obj)
+			
+			<br>
+		
+			{{$obj->nombre;}}<input type="checkbox" name="{{$obj->nombre;}}" value="{{$obj->id}}" id="">
+		
+		@endforeach
+		
+		
+		<br>
+		<br>
+		Selecciona los síntomas que presenta:
+		<br>
+		
+		@foreach ($sintomas->all() as $obj)
+			
+			<br>
+		
+			{{$obj->nombre;}}<input type="checkbox" name="{{$obj->nombre;}}" value="{{$obj->id}}" id="">
+		
+		@endforeach
+		
+		
+		<br>
+		<br>
 		<label>
 			Añadir un síntoma: 
 			<br>

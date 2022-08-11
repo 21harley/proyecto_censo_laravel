@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Sintoma;
+use App\Models\User;
+use App\Models\Enfermedades;
 use Illuminate\Database\Seeder;
 
 
@@ -17,36 +19,71 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+		//Crear el administrador
+		
+		$user=new User();
+		$user->nombre="admin";
+		$user->apellido="admin";
+		$user->clave="admin";
+		$user->re_clave="admin";
+		$user->cedula="admin";
+		$user->correo="admin";
+		$user->dire_municipio="admin";
+		$user->dire_localidad="admin";
+		$user->tele_fijo="000";
+		$user->tele_movil="000";
+		$user->create_user="2022-10-08";
+		$user->url_img="000";
+		$user->virus="admin";
+		$user->admin=1;
+		
+		$user->save();
+		
+		//Crear las enfermedades/virus actuales
+		
+		$virus=new Enfermedades();
+		$virus->nombre="COVID 19";
+		$virus->save();
+		
+		$virus=new Enfermedades();
+		$virus->nombre="Viruela del mono";
+		$virus->save();
+		
+		$virus=new Enfermedades();
+		$virus->nombre="Variante del COVID";
+		$virus->save();
+		
+		//Crear los principales síntomas
+		
 		$sintoma=new Sintoma();
 		$sintoma->nombre="fiebre";
-		$sintoma->descripcion="";
+	
 		
 		$sintoma->save();
 		
 		$sintoma=new Sintoma();
 		$sintoma->nombre="erupciones en la piel";
-		$sintoma->descripcion="";
+		
 		$sintoma->save();
 		
 		$sintoma=new Sintoma();
 		$sintoma->nombre="tos";
-		$sintoma->descripcion="";
+	
 		$sintoma->save();
 		
 		$sintoma=new Sintoma();
 		$sintoma->nombre="dolores musculares";
-		$sintoma->descripcion="";
+		
 		$sintoma->save();
 		
 		$sintoma=new Sintoma();
 		$sintoma->nombre="dolor de cabeza";
-		$sintoma->descripcion="";
+		
 		$sintoma->save();
 		
 		$sintoma=new Sintoma();
 		$sintoma->nombre="vómito";
-		$sintoma->descripcion="";
+		
 		$sintoma->save();
 		
         // \App\Models\User::factory()->create([

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Sintoma;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -17,6 +18,9 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+	 
+	 public $timestamps = false;
+	 
     protected $fillable = [
         'nombre',
         'apellido',
@@ -30,14 +34,20 @@ class User extends Authenticatable
         'tele_movil',
         'create_user',
         'url_img',
-        'virus'
+        'virus',
+		'admin'
     ];
 
     public function sintoma()
     {
-      return $this->belongsToMany('App/Models/Sintoma');
+      return $this->belongsToMany('App\Models\Sintoma','sintoma_user','user_id','sintoma_id');
     }
 
+	public function enfermedad()
+    {
+      return $this->belongsToMany('App\Models\Enfermedades','enfermedad_user','user_id','enfermedad_id');
+    }
+	
     public function notificacion()
     {
       return $this->belongsToMany('App/Models/Notificacion');

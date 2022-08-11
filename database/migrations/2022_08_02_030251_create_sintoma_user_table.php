@@ -13,17 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users_sintomas', function (Blueprint $table) {
+        Schema::create('sintoma_user', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('sintomas_id');
-            $table->unsignedBigInteger('users_id');
-        
-            $table->foreign('sintomas_id')->references('id')->on('sintomas')
-                        ->onUpdate('cascade')->onDelete('cascade');
-                        
-            $table->foreign('users_id')->references('id')->on('users')
+            $table->unsignedBigInteger('sintoma_id');
+            $table->unsignedBigInteger('user_id');
+			            
+						
+            $table->foreign('user_id')->references('id')->on('users')
                         ->onUpdate('cascade')->onDelete('cascade');
         
+        
+            $table->foreign('sintoma_id')->references('id')->on('sintomas')
+                        ->onUpdate('cascade')->onDelete('cascade');
+            
         });
     }
 
@@ -34,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_sintomas');
+        Schema::dropIfExists('sintoma_user');
     }
 };

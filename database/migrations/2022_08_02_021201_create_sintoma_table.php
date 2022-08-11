@@ -16,8 +16,7 @@ return new class extends Migration
         Schema::create('sintomas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->text('descripcion');
-			$table->timestamps();
+      
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sintomas');
+        Schema::dropIfExists('sintoma');
     }
 };

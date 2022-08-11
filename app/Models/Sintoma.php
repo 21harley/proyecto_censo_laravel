@@ -8,11 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Sintoma extends Model
 {
     use HasFactory;
+	
+	public $timestamps = false;
+	
     protected $fillable = [
         'nombre',
         'descripcion'
     ];
 
+	
     /*public function user()
     {
      return $this->belongsToMany('App/Models/User');
