@@ -29,12 +29,15 @@ Route::get('/', function () {
 Route::get('users/create', [UserController::class,'create' ])->name('users.create');
 Route::get('users/{user}', [UserController::class,'show' ])->name('users.show');
 
-Route::post('users/create/menor_de_edad', [UserController::class,'create_menor'])->name('users.menor.create');
+Route::get('users/create/menor_de_edad', [UserController::class,'create_menor'])->name('users.menor.create');
 
 
 //Para ingresar
+
+Route::post('user', [UserController::class,'store_menor'])->name('menor.store');
+
 Route::post('users', [UserController::class,'store'])->name('users.store')->middleware('age');
-//Route::post('users', [UserController::class,'store_menor'])->name('users.menor.store');
+
 
 //********Sintomas y enfermedades *************
 

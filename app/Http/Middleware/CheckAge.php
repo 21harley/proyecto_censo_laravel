@@ -18,10 +18,10 @@ class CheckAge
     {
 		if(isset($request->age)){
 		
-			return redirect(route('users.menor.create',$request));
+			return redirect()->route('users.menor.create',$request);
 		
 		}else{
-			
+
 			return $next($request);
 			
 		}

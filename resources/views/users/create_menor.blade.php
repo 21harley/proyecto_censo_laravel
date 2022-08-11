@@ -7,9 +7,10 @@
 	
 	
 	
-	<form action="" method="POST">
+	<form action="{{route('menor.store')}}" method="POST">
 		
 		@csrf
+		
 		
 	<?php /*	<label>
 			Nombre: 
@@ -26,37 +27,30 @@
 		</label>
 	*/?>
 		
+				
+			<input  type="hidden" name="correo" value="{{$request->correo}}">
+			<input  type="hidden" name="clave" value="{{$request->clave}}">
+			<input type="hidden" name="re_clave" value="{{$request->re_clave}}">
+			<input  type="hidden" name="cedula" value="{{$request->cedula}}">
+		
+		
+		
+		
 		<label>
-			Correo:
+			Nombre:
 			<br>			
-			<input  type="text" name="correo" >
+			<input  type="text" name="nombre" >
 			<br>
 		</label>
 		
 		<label>
-			Clave: 
+			Apellido: 
 			<br>
-			<input type="text" name="clave">
+			<input type="text" name="apellido">
 			|<br>
 		</label>
 		
-		<label>
-			Confirma la clave: 
-			<br>
-			<input type="text" name="re_clave">
-			<br>
-		</label>
-		
-		<label>
-			Cedula:
-			<br>			
-			<input  type="text" name="cedula" >
-			<br>
-		</label>
-		
-		
-		
-		
+				
 		<label>
 			dire_municipio: 
 			<br>
@@ -75,7 +69,7 @@
 			tele_fijo: 
 			<br>
 			<input type="text" name="tele_fijo">
-			|<br>
+			<br>
 		</label>
 		
 		<label>
