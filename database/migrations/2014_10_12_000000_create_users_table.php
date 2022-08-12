@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->string('clave');
-            $table->string('re_clave');
             $table->string('cedula');
             $table->string('correo')->unique();
             $table->string('dire_municipio');

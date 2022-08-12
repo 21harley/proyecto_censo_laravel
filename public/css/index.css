@@ -1,3 +1,5 @@
+
+
 :root{
     --color-one:#fff;
     --color-two:#FFCC00;
@@ -25,6 +27,8 @@ body{
 }
 .title{
     text-align: center;
+	margin: 0 0 5vh 0;
+	padding: 5vh 0 0 0;
 }
 /* welcome*/
 .posicion-esfera{
@@ -67,6 +71,7 @@ background-color: var(--color-two);
     margin: auto;
 }
 .form-sintomas-create{
+	
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -107,4 +112,4 @@ background-color: var(--color-two);
 .container__item{
     width: 100%;
     max-width: 400px;
-}
+} 

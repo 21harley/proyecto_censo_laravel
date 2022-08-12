@@ -3,7 +3,7 @@
 @section('title','Crear usuario')
 
 @section('content')
-	<h1 class="title">Registre sintomas</h1>
+	<h1 class="title">Registro de estado de salud</h1>
 	
 	
 		

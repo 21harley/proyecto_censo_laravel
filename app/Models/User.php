@@ -25,7 +25,6 @@ class User extends Authenticatable
         'nombre',
         'apellido',
         'clave',
-        're_clave',
         'cedula',
         'correo',
         'dire_municipio',

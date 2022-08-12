@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Enfermedades;
+use App\Models\Sintoma;
 
 use Illuminate\Http\Request;
 

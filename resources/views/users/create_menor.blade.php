@@ -3,7 +3,7 @@
 @section('title','Crear usuario')
 
 @section('content')
-	<h1>Bienvenido a la creacion</h1>
+	<h1 class="title">Registro de representates</h1>
 	
 	
 	
@@ -34,62 +34,36 @@
 			<input  type="hidden" name="cedula" value="{{$request->cedula}}">
 		
 		
+		<div class="form-create" >
 		
+			<div>
+				<label>Nombre*: </label><input type="text" name="nombre" required>
+			</div>
+			<div>
+				<label>Apellido*:	</label><input  type="text" name="apellido" required>
+			</div>
+			<div>
+				<label>dirección del municipio*:</label><input  type="text" name="dire_municipio" required>
+			</div>
+			<div>
+				<label>dirección de la localidad*:</label><input  type="text" name="dire_localidad" required>
+			</div>
+			<div>
+				<label>Teléfono fijo*:</label><input  type="text" name="tele_fijo" required>
+			</div>
+			<div>
+				<label>Teléfono movil*:</label><input  type="text" name="tele_movil" required>
+			</div>
+			
+			
+			</div>
+			
+			<div class="pos-button">
+			<button type="submit" class="buttom-submit">Enviar</button>
+		</div>
+			
+			
 		
-		<label>
-			Nombre:
-			<br>			
-			<input  type="text" name="nombre" >
-			<br>
-		</label>
-		
-		<label>
-			Apellido: 
-			<br>
-			<input type="text" name="apellido">
-			|<br>
-		</label>
-		
-				
-		<label>
-			dire_municipio: 
-			<br>
-			<input type="text" name="dire_municipio">
-			<br>
-		</label>
-		
-		<label>
-			dire_localidad
-			<br>			
-			<input  type="text" name="dire_localidad" >
-			<br>
-		</label><
-		
-		<label>
-			tele_fijo: 
-			<br>
-			<input type="text" name="tele_fijo">
-			<br>
-		</label>
-		
-		<label>
-			tele_movil: 
-			<br>
-			<input type="text" name="tele_movil">
-			<br>
-		</label>
-		
-		
-	
-		
-	
-		
-		
-		
-		
-		<br>
-		
-		<button type="submit">Enviar formulario</button>
 		
 		
 	</form>

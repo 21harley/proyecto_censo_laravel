@@ -3,7 +3,7 @@
 @section('title','Login')
 
 @section('content')
-	<h1>Bienvenido al login</h1>
+	<h1 class="title">Iniciar sesión</h1>
 	
 	
 	
@@ -13,28 +13,29 @@
 		
 		
 
+		<div class="form-create" >
+		
+			<div>
+				<label>Correo*: </label><input type="text" name="correo" required>
+			</div>
+			<div>
+				<label>Clave*:	</label><input  type="text" name="clave" required>
+			</div>
+			
+			
+			
+			</div>
+			
+			<div class="pos-button">
+			<button type="submit" class="buttom-submit">Enviar</button>
+		</div>
 		
 		
 		
-		<label>
-			Correo:
-			<br>			
-			<input  type="text" name="correo" >
-			<br>
-		</label>
-		
-		<label>
-			Clave: 
-			<br>
-			<input type="text" name="clave">
-			|<br>
-		</label>
 		
 		
 		
-		<br>
-		
-		<button type="submit">Enviar formulario</button>
+
 		
 		
 	</form>

@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
 		$user->nombre="admin";
 		$user->apellido="admin";
 		$user->clave="admin";
-		$user->re_clave="admin";
 		$user->cedula="admin";
 		$user->correo="admin";
 		$user->dire_municipio="admin";

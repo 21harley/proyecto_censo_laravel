@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,15 @@ class CheckAge
     {
 		if(isset($request->age)){
 		
-			return redirect()->route('users.menor.create',$request);
+		
+		$user=new User();
+		$user->clave=$request->clave;
+		$user->correo=$request->correo;
+		$user->cedula=$request->cedula;
+		
+		$request->session()->flash('status', $user);
+		
+			return redirect()->route('users.menor.create');
 		
 		}else{
 

@@ -25,8 +25,9 @@ class UserController extends Controller
 		return view('users.create');
 	}
 	
-	public function create_menor(Request $request){
+	public function create_menor(){
 		
+		$request=session('status');
 		return view('users.create_menor',compact('request'));
 	}
 	
@@ -36,7 +37,6 @@ class UserController extends Controller
 		$useraux->nombre=$request->nombre;
 		$useraux->apellido=$request->apellido;
 		$useraux->clave=$request->clave;
-		$useraux->re_clave=$request->re_clave;
 		$useraux->cedula=$request->cedula;
 		$useraux->correo=$request->correo;
 		$useraux->dire_municipio=$request->dire_municipio;
