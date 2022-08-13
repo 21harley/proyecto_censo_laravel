@@ -7,7 +7,7 @@ use App\Models\Enfermedades;
 use App\Models\Sintoma;
 use App\Models\Notification;
 use App\Models\Post;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -46,6 +46,7 @@ class UserController extends Controller
 		$useraux->nombre=$request->nombre;
 		$useraux->apellido=$request->apellido;
 		$useraux->clave=$request->clave;
+		$useraux->re_clave=$request->re_clave;
 		$useraux->cedula=$request->cedula;
 		$useraux->correo=$request->correo;
 		$useraux->dire_municipio=$request->dire_municipio;
@@ -65,16 +66,18 @@ class UserController extends Controller
 	public function store(Request $request){
 		
 		$user=new User();
-		$user->nombre= " ";
-		$user->apellido=" ";
+		$user->nombre= "N/D";
+		$user->apellido="N/D";
 		$user->clave=$request->clave;
+		$user->re_clave=$request->re_clave;
 		$user->cedula=$request->cedula;
 		$user->correo=$request->correo;
-		$user->dire_municipio=" ";
-		$user->dire_localidad=" ";
-		$user->tele_fijo=" ";
-		$user->tele_movil=" ";
+		$user->dire_municipio="N/D";
+		$user->dire_localidad="N/D";
+		$user->tele_fijo="N/D";
+		$user->tele_movil="N/D";
 		$user->admin="0";
+		$user->create_user=Carbon::now();
 	
 		
 	
