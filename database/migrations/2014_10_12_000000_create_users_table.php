@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('dire_localidad');
             $table->string('tele_fijo');
             $table->string('tele_movil');
+			$table->string('centro_medico');
 			$table->integer('admin');
 		
         });

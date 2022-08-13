@@ -31,6 +31,7 @@ class User extends Authenticatable
         'dire_localidad',
         'tele_fijo',
         'tele_movil',
+		'centro_medico',
 		'admin'
     ];
 

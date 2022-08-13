@@ -43,6 +43,9 @@
 		<div class="form-sintomas-create__item">
 			<label>Añadir un síntoma:</label> <br> <br> <input type="text" name="nuevo_sintoma">
 		</div>
+		<div class="form-sintomas-create__item">
+			<label>Añadir el centro de salud:</label> <br> <br> <input type="text" name="centro_medico" required>
+		</div>
 	</div>
 
 	<div class="pos-button">

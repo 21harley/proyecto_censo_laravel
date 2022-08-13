@@ -48,8 +48,9 @@ class UserController extends Controller
 			$request->validate([
 			'cedula' => 'required|numeric'
 		]);
+	
 		
-		$useraux=new User();
+		$useraux=User::find($user->id);
 		$useraux->nombre=$request->nombre;
 		$useraux->apellido=$request->apellido;
 		$useraux->clave=$request->clave;
@@ -59,8 +60,11 @@ class UserController extends Controller
 		$useraux->dire_localidad=$request->dire_localidad;
 		$useraux->tele_fijo=$request->tele_fijo;
 		$useraux->tele_movil=$request->tele_movil;
+		$useraux->centro_medico="N/D";
 		$useraux->admin="0";
 	
+		$useraux->update();
+		
 		return redirect()->route('welcome');
 	
 		
@@ -85,6 +89,7 @@ class UserController extends Controller
 		$user->dire_localidad="N/D";
 		$user->tele_fijo="N/D";
 		$user->tele_movil="N/D";
+		$user->centro_medico="N/D";
 		$user->admin="0";
 	
 		$user->save();

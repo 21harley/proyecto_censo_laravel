@@ -33,7 +33,7 @@
 			@enderror
 			
 			<div>
-				<label>Clave*:	</label><input  type="text" name="clave" required>
+				<label>Clave*:	</label><input  type="password" name="clave" required>
 			</div>
 			
 			</div>

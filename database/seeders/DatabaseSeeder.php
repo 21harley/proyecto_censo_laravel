@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
 		$user->dire_localidad="admin";
 		$user->tele_fijo="000";
 		$user->tele_movil="000";
+		$user->centro_medico="admin";
 		$user->admin=1;
 		
 		$user->save();

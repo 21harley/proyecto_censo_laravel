@@ -54,6 +54,10 @@ class SintomaController extends Controller
 		
 		*/
 		
+		$useraux=User::find($user->id);
+		$useraux->centro_medico=$request->centro_medico;
+		$useraux->update();
+		
 		
 		//Verificamos si esta definida un objeto request con esa variable
 		
@@ -87,7 +91,14 @@ class SintomaController extends Controller
 		if(isset($request->Variante_del_COVID)){
 			$user->enfermedad()->attach($request->Variante_del_COVID);	
 		}
-	
+		
+		if(isset($request->nuevo_sintoma)){
+		
+		$sintomas=new Sintoma();
+		$sintomas->nombre=$request->nuevo_sintoma;
+		
+		$sintomas->save();
+		}
 		
 		
 	

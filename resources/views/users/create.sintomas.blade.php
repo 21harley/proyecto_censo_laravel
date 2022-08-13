@@ -13,6 +13,7 @@
 		@csrf
 		
 		@method('put')
+		
 		<div class="form-sistomas">
 			<div>
 				<label>Virus</label><input type="text" name="virus">
