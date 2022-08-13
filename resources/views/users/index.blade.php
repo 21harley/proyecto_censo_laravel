@@ -7,6 +7,8 @@
 	<li class="nav-admin__li"> <a class="nav-admin__a" href="{{route('welcome')}}">Cerrar sesión</a></li>
   </ul>
 
+<div class="container__grid">
+	
 
 	<div>Notificaciones:</div>
 <ul>
@@ -25,11 +27,8 @@
 	</li>
 	@endforeach
 </ul>
-	@foreach($noticias as $noticia)
-		<p>{{$noticia->title}}</p>
-		<p>{{$noticia->mensaje}}</p>
-	@endforeach
 
+</div>
 	
 	
 @endsection 
