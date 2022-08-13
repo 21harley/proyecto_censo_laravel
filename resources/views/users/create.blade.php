@@ -11,22 +11,26 @@
 
 
 		<div class="form-create" >
-		
-			<div>
-				<label>Clave*: </label><input type="text" name="clave" required>
-			</div>
-			<div>
-				<label>Cedula*:	</label><input  type="text" name="cedula" required>
-			</div>
+			
 			<div>
 				<label>Correo*:</label><input  type="text" name="correo" required>
 			</div>
+			<div>
+				<label>Clave*: </label><input type="password" name="clave" required>
+			</div>
+			
+			<div>
+				<label>Cedula*:	</label><input  type="text" name="cedula" required>
+			</div>
+			
 			<div>
 			¿Eres menor de edad?
 			<input type="checkbox" name="age" value="18" id="">
 			</div>
 		
-		
+			@error('cedula')
+				<small>Solo se permiten digitos en la cédula</small>
+			@enderror
 		</div>
 		<div class="pos-button">
 			<button type="submit" class="buttom-submit">Enviar formulario</button>

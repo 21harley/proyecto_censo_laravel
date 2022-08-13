@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 		'age' => \App\Http\Middleware\CheckAge::class,
 		'registered' => \App\Http\Middleware\CheckRegistered::class,
+		'cedula_exist' => \App\Http\Middleware\CheckCedula::class,
 	];
 }

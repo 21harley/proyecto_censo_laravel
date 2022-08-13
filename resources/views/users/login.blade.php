@@ -18,9 +18,23 @@
 			<div>
 				<label>Correo*: </label><input type="text" name="correo" required>
 			</div>
+			
+			@error('correo')
+			<div>
+				<small>Correo inválido<small>
+			</div>
+			@enderror
+			
+			@error('clave')
+			<div >
+				<small>Clave incorrecta<small>
+			</div>
+			@enderror
+			
 			<div>
 				<label>Clave*:	</label><input  type="text" name="clave" required>
 			</div>
+			
 			
 			
 			

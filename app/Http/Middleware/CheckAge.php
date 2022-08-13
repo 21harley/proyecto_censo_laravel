@@ -17,6 +17,11 @@ class CheckAge
      */
     public function handle(Request $request, Closure $next)
     {
+		
+		$request->validate([
+			'cedula' => 'required|numeric'
+		]);
+		
 		if(isset($request->age)){
 		
 		
