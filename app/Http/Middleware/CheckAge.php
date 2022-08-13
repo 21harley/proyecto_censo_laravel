@@ -18,27 +18,11 @@ class CheckAge
     public function handle(Request $request, Closure $next)
     {
 		
-		$request->validate([
-			'cedula' => 'required|numeric'
-		]);
 		
-		if(isset($request->age)){
-		
-		
-		$user=new User();
-		$user->clave=$request->clave;
-		$user->correo=$request->correo;
-		$user->cedula=$request->cedula;
-		
-		$request->session()->flash('status', $user);
-		
-			return redirect()->route('users.menor.create');
-		
-		}else{
-
-			return $next($request);
+	
 			
-		}
+			return $next($request);
+		
 		
 	}
 }

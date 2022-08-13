@@ -3,14 +3,15 @@
 @section('title','Crear usuario')
 
 @section('content')
-	<h1 class="title">Registro de representates</h1>
+	<h1 class="title">Registro de usuarios</h1>
 	
 	
 	
-	<form action="{{route('menor.store')}}" method="POST">
+	<form action="{{route('menor.store',compact('user'))}}" method="post">
 		
 		@csrf
 		
+		@method('put')
 		
 	<?php /*	<label>
 			Nombre: 
@@ -28,9 +29,9 @@
 	*/?>
 		
 				
-			<input  type="hidden" name="correo" value="{{$request->correo}}">
-			<input  type="hidden" name="clave" value="{{$request->clave}}">
-			<input  type="hidden" name="cedula" value="{{$request->cedula}}">
+			<input  type="hidden" name="correo" value="{{$user->correo}}">
+			<input  type="hidden" name="clave" value="{{$user->clave}}">
+			<input  type="hidden" name="cedula" value="{{$user->cedula}}">
 		
 		
 		<div class="form-create" >
@@ -40,6 +41,11 @@
 			</div>
 			<div>
 				<label>Apellido*:	</label><input  type="text" name="apellido" required>
+			</div>
+			<div>
+				<label><?php $sentence = isset($age) ?   "Cédula*:" : "Cédula del representante*" ;
+				echo $sentence;?>
+				</label><input  type="text" name="cedula" required>
 			</div>
 			<div>
 				<label>dirección del municipio*:</label><input  type="text" name="dire_municipio" required>
@@ -54,6 +60,9 @@
 				<label>Teléfono movil*:</label><input  type="text" name="tele_movil" required>
 			</div>
 			
+			@error('cedula')
+				<small>Solo se permiten números en la cédula</small>
+			@enderror
 			
 			</div>
 			

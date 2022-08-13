@@ -15,10 +15,7 @@
 			<div>
 				<label>Clave*: </label><input type="text" name="clave" required>
 			</div>
-			<div>
-				<label>Cedula*:	</label><input  type="text" name="cedula" required>
-			</div>
-
+			
 			<div>
 				<label>Correo*:</label><input  type="text" name="correo" required>
 			</div>
@@ -29,9 +26,7 @@
 			</div>
 		
 
-			@error('cedula')
-				<small>Solo se permiten digitos en la cédula</small>
-			@enderror
+			
 
 		</div>
 		<div class="pos-button">

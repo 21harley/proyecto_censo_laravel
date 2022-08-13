@@ -40,17 +40,19 @@ Route::get('users/create', [UserController::class,'create' ])->name('users.creat
 
 Route::post('admin/search', [UserController::class,'show' ])->name('users.show')->middleware('cedula_exist');
 
-Route::get('users/create/menor_de_edad', [UserController::class,'create_menor'])->name('users.menor.create');
+Route::get('users/create/menor_de_edad/{user}', [UserController::class,'create_menor'])->name('users.menor.create');
 
 Route::get('index/{user}', [UserController::class,'index'])->name('users.index');
+
+Route::get('users/personal/{user}', [UserController::class,'store_personal'])->name('users.store.personal');
 
 Route::get('admin/search', [UserController::class,'search' ])->name('users.search');
 
 //Para ingresar
 
-Route::post('user', [UserController::class,'store_menor'])->name('menor.store');
+Route::put('user/{user}', [UserController::class,'store_menor'])->name('menor.store');
 
-Route::post('users', [UserController::class,'store'])->name('users.store')->middleware('age');
+Route::post('users', [UserController::class,'store'])->name('users.store');
 
 
 //********Sintomas y enfermedades *************
