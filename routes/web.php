@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\NewsController;
+use App\Http\Controllers\NotificacionController;
 use App\Http\Controllers\SintomaController;
 use App\Http\Controllers\AdminController;
 /*
@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 //*****ADMINS**********
 
-Route::get('index', [AdminController::class,'index'])->name('admins.index');
+Route::get('admin/index', [AdminController::class,'index'])->name('admins.index');
 
 
 
@@ -37,12 +37,14 @@ Route::get('/home', function () {
 
 //Para mostrar
 Route::get('users/create', [UserController::class,'create' ])->name('users.create');
-Route::get('users/{user}', [UserController::class,'show' ])->name('users.show');
+
+Route::post('admin/search', [UserController::class,'show' ])->name('users.show')->middleware('registered');
 
 Route::get('users/create/menor_de_edad', [UserController::class,'create_menor'])->name('users.menor.create');
 
 Route::get('index/{user}', [UserController::class,'index'])->name('users.index');
 
+Route::get('admin/search', [UserController::class,'search' ])->name('users.search');
 
 //Para ingresar
 
@@ -54,7 +56,7 @@ Route::post('users', [UserController::class,'store'])->name('users.store')->midd
 //********Sintomas y enfermedades *************
 
 
-Route::get('users/{user}/create_sintomas', [SintomaController::class,'create_sintomas' ])->name('users.sintomas');
+Route::get('users/{user}/create_sintomas', [SintomaController::class,'create_sintomas' ])->name('create.sintomas');
 Route::put('users/{user}',[SintomaController::class,'store_sintoma'])->name('users.sintomas');
 
 //*******Publicacion***********
@@ -66,10 +68,10 @@ Route::post('publication', [PostController::class,'store'])->name('post.store');
 
 //*******Notificacion***********
 
-Route::get('notificacion/create', [NewsController::class,'create' ])->name('notificacion.create');
+Route::get('notificacion/create', [NotificacionController::class,'create' ])->name('notification.create');
 
 //Ojo con el return de los stores se utiliza tambien redirect que es un metodo
-Route::post('notificacion', [NewsController::class,'store'])->name('notificacion.store');
+Route::post('notificacion', [NotificacionController::class,'store'])->name('notificacion.store')->middleware('registered');
 
 
 //***Prueba

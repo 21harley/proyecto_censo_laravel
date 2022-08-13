@@ -1,9 +1,9 @@
-@extends('layauts.template')
+@extends('layauts.plantilla')
 
 @section('title','Crear usuario')
 
 @section('content')
-	<h1>Bienvenido a la creacion</h1>
+		<h1 class="title">Ingresa una noticia</h1>
 	
 	
 	
@@ -11,32 +11,33 @@
 		
 		@csrf
 		
-		<label>
-			Titulo: 
-			<br>
-			<input type="text" name="title">
-			<br>
-		</label>
-		
-		<label>
-			Mensaje:
-			<br>			
-			<input  type="text" name="mensaje" >
-			<br>
-		</label>
-		
-		<label>
-			url_img: 
-			<br>
-			<input type="text" name="url_img">
-			|<br>
-		</label>
+		<div class="form-create" >
+			<div>
+			<label>Título*: </label>
+			</div>
+			
+			
+			<div>
+				<input type="text" name="title" required>
+			</div>
+			<div>
+			<label>Mensaje*:	</label>
+			</div>
+			<div>
+				<textarea  type="text" name="mensaje" rows="10" cols="30"				required></textarea>
+			</div>
+			
+			
 		
 		
+		</div>
+		<div class="pos-button">
+			<button type="submit" class="buttom-submit">Enviar formulario</button>
+		</div>
 		
-		<br>
+			
 		
-		<button type="submit">Enviar formulario</button>
+		
 		
 		
 	</form>

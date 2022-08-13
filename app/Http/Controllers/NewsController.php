@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Notification;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
      public function create(){
-	
+		
+		
 		return view('notificacion.create');
 	}
 	
@@ -20,6 +22,10 @@ class NewsController extends Controller
 		
 		$notification->save();
 		
-		return view('welcome');
+		$user=User::find($request->id);
+		
+		$user->notification()->attach($notification->id);
+		
+		return $user;
 	}
 }

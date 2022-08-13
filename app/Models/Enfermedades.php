@@ -14,4 +14,11 @@ class Enfermedades extends Model
     protected $fillable = [
         'nombre'
     ];
+	
+	 public function user()
+    {
+     return $this->belongsToMany('App\Models\User');
+   
+ 
+   }
 }

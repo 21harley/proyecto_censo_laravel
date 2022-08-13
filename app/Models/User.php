@@ -41,12 +41,12 @@ class User extends Authenticatable
 
 	public function enfermedad()
     {
-      return $this->belongsToMany('App\Models\Enfermedades','enfermedad_user','user_id','enfermedad_id');
+      return $this->belongsToMany('App\Models\Enfermedades','enfermedades_user','user_id','enfermedades_id');
     }
 	
-    public function notificacion()
+    public function notification()
     {
-      return $this->belongsToMany('App/Models/Notificacion');
+      return $this->belongsToMany('App\Models\Notification','users_notifications','users_id','notifications_id');
     }
 
 }

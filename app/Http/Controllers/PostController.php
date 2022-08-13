@@ -18,10 +18,9 @@ class PostController extends Controller
 		
 		$post->title=$request->title;
 		$post->mensaje=$request->mensaje;
-		$post->url_img=$request->url_img;
 		
 		$post->save();
 		
-		return view('welcome');
+		return redirect()->route('admins.index');
 	}
 }

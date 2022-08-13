@@ -5,17 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Enfermedades;
 use App\Models\Sintoma;
+use App\Models\Notification;
+use App\Models\Post;
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
 	public function index(User $user){
 		
-		return "coca cola";
 		
+		$noticias=Post::all();
+		
+		return view('users.index',compact('noticias','user'));
 	}
 
-    public function show(User $user){
+    public function show(Request $request){
+		
+		
+		$user=User::find($request->id);
+		
 		
 		return view('users.show',compact('user'));
 	}
@@ -59,7 +68,6 @@ class UserController extends Controller
 		$user->nombre= " ";
 		$user->apellido=" ";
 		$user->clave=$request->clave;
-		$user->re_clave=$request->re_clave;
 		$user->cedula=$request->cedula;
 		$user->correo=$request->correo;
 		$user->dire_municipio=" ";
@@ -81,6 +89,13 @@ class UserController extends Controller
 	
 		return view('users.login');
 	}		
+	
+	public function search(){
+			
+		return view('users.search');
+		
+	}	
+	
 	
 	public function loged(Request $request){
 		

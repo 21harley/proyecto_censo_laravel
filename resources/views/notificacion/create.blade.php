@@ -1,27 +1,37 @@
-@extends('layauts.template')
+@extends('layauts.plantilla')
 
 @section('title','Crear usuario')
 
 @section('content')
-	<h1>Bienvenido a la notificacion</h1>
-	
+		<h1 class="title">Ingresa una notificación</h1>
 	
 	
 	<form action="{{route('notificacion.store')}}" method="POST">
 		
 		@csrf
 		
-		<label>
-			Mensaje: 
-			<br>
-			<input type="text" name="mensaje">
-			<br>
-		</label>
+		<div class="form-create" >
+			
+			<div>
+			<label>Notificación*:	</label>
+			</div>
+			<div>
+				<textarea  type="text" name="mensaje" rows="10" cols="30"				required></textarea>
+			</div>
+			
+			<div>
+			<label>Cédula*:	</label>
+			</div>
+			<div>
+				<input  type="text" name="cedula" required>
+			</div>
 		
-		<br>
+		</div>
+		<div class="pos-button">
+			<button type="submit" class="buttom-submit">Enviar formulario</button>
+		</div>
 		
-		<button type="submit">Enviar formulario</button>
-		
-		
+	
+	
 	</form>
 @endsection 

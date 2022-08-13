@@ -18,11 +18,13 @@ return new class extends Migration
             $table->unsignedBigInteger('notifications_id');
             $table->unsignedBigInteger('users_id');
             
-            $table->foreign('notifications_id')->references('id')->on('notifications')
+             $table->foreign('users_id')->references('id')->on('users')
+                        ->onUpdate('cascade')->onDelete('cascade');
+						
+			$table->foreign('notifications_id')->references('id')->on('notifications')
                         ->onUpdate('cascade')->onDelete('cascade');
                         
-            $table->foreign('users_id')->references('id')->on('users')
-                        ->onUpdate('cascade')->onDelete('cascade');
+           
 
         });
     }

@@ -7,6 +7,7 @@
 <div class="container">
 <div class="container__grid">
 	<h1 class="title">Bienvenido al curso {{$user->nombre}}</h1>
+	
 <div class="container__item">
 	<h3>Usted posee el virus:</h3>
 	<ul>
@@ -27,11 +28,13 @@
     </ul>
 
 </div>
-<div class="container__item">
-	<a href="">Editar curso</a>
-	<p><strong>Categoria: 
-	</strong>{{$user->nombre}}</p>
+
 </div>
 </div>
-</div>
+
+<div class="pos-button">
+
+			<button type="submit" class="buttom-submit"><a href="{{route('admins.index')}}">Retroceder</a></button>
+		</div>
+		
 @endsection 

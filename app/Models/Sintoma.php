@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Sintoma extends Model
 {
     use HasFactory;
@@ -17,11 +18,11 @@ class Sintoma extends Model
     ];
 
 	
-    /*public function user()
+    public function user()
     {
-     return $this->belongsToMany('App/Models/User');
+     return $this->belongsToMany('App\Models\User');
    
  
-   }*/
+   }
 
 }

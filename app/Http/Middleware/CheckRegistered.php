@@ -17,7 +17,9 @@ class CheckRegistered
      */
     public function handle(Request $request, Closure $next)
     {
-	//	$curso=new Curso()::where('correo','{{$request->correo}}')->get();
+		
+		$user_cedula=User::where('cedula',$request->cedula)->first();
+		
 		
 		$user =User::where('correo',$request->correo)->first();
 		
@@ -29,15 +31,30 @@ class CheckRegistered
 				return redirect()->route('admins.index');
 			}
 			else{
-				return redirect()->route('users.index',compact('user'));
+				
+				foreach($user->sintoma as $ok){
+				
+						
+							
+							return redirect()->route('users.index',compact('user'));
+						
+				
+				}
+				
+					return redirect()->route('create.sintomas',compact('user'));
 			}
 		
 		}
+		elseif(!$user_cedula==null){
+			$request->request->add(['id' => $user_cedula->id]);
+			return $next($request);
+		}
+		
 		else{
 			return redirect()->route('welcome');
 		}
 		
-		
+	
 		
 		
        
