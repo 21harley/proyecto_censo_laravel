@@ -7,6 +7,9 @@
 		</li>
 		-->
 		<li class="nav-admin__li">
+			<a class="nav-admin__a title-nav" href="{{route('admins.index')}}">Home</a>
+		</li>
+		<li class="nav-admin__li">
 			<a class="nav-admin__a title-nav" href="{{route('users.search')}}">Buscar usuario</a>
 		</li>
 		<li class="nav-admin__li">

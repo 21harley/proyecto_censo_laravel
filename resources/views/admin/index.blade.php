@@ -8,6 +8,8 @@
 
 <?php $acum=0; ?>
 
+
+
 @foreach($virus as $role1)
 
 	@foreach($role1->user as $obj1)
