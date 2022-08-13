@@ -4,7 +4,7 @@
 
 @section('content')
 
-<a href="{{route('welcome')}}">Cerrar sesión</a>
+@include('layauts.nav_admin');
 
 <?php $acum=0; ?>
 
@@ -29,8 +29,5 @@
 
 @endforeach
 
-<a href="{{route('users.search')}}">Buscar usuario</a>
-<a href="{{route('notification.create')}}">Crear notificación</a>	
-<a href="{{route('post.create')}}">Crear noticia</a>
 	
 @endsection 

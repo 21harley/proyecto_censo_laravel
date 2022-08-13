@@ -3,6 +3,9 @@
 @section('title','Crear usuario')
 
 @section('content')
+
+@include('layauts.nav_admin');
+
 	<h1 class="title">Búsqueda de usuarios</h1>
 	
 	

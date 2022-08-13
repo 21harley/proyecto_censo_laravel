@@ -78,7 +78,6 @@ class UserController extends Controller
 		$user->tele_fijo="N/D";
 		$user->tele_movil="N/D";
 		$user->admin="0";
-		$user->create_user=Carbon::now();
 	
 		
 	

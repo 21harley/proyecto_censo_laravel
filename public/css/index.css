@@ -126,3 +126,29 @@ background-color: var(--color-two);
   text-decoration: none;
   color: var(--color-one);
 }
+/* nav-admin */
+.title-nav{
+    color:var(--color-five);
+}
+.nav-admin{
+    padding: 10px;
+}
+.nav-admin__ul{
+    list-style: none;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav-admin__a{
+    text-decoration: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: large;
+    padding: 8px;
+    border-radius: 5px;
+}
+.nav-admin__a:hover{
+  background-color: var(--color-five);
+  color: var(--color-one);
+}

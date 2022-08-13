@@ -1,8 +1,10 @@
-@extends('layauts.plantilla')
+@extends('layauts.template')
 
 @section('title','Crear usuario')
 
 @section('content')
+
+@include('layauts.nav_admin');
 		<h1 class="title">Ingresa una noticia</h1>
 	
 	
