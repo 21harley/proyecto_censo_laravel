@@ -1,6 +1,6 @@
 @extends('layauts.template')
 
-@section('title','HOLAAA')
+@section('title','Administrador')
 
 @section('content')
 
@@ -9,6 +9,10 @@
 <?php $acum=0; ?>
 
 <div class="container__grid--a">
+
+		<ul>
+			<h3>Reporte de virus:</h3>
+		</ul>
 	<ul>
 		@foreach($virus as $role1)
 		
@@ -21,6 +25,9 @@
 		@endforeach
 		</ul>
 		
+		<ul>
+			<h3>Reporte de síntomas:</h3>
+		</ul>
 		<ul>
 		@foreach($sintomas as $role)
 		

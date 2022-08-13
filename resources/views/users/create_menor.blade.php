@@ -1,6 +1,6 @@
 @extends('layauts.template')
 
-@section('title','Crear usuario')
+@section('title','Crear cuenta')
 
 @section('content')
 	<h1 class="title">Registro de usuarios</h1>

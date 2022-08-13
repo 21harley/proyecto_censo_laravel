@@ -22,7 +22,7 @@
 		<li>Localidad*: {{$user->dire_localidad}}</li>
 		<li>Teléfono fijo*: {{$user->tele_fijo}}</li>
 		<li>Teléfono movil*:{{$user->tele_movil}}</li>
-	
+		<li>Centro médico*:{{$user->centro_medico}}</li>
 	
     </ul>
 	</div>

@@ -1,6 +1,6 @@
 @extends('layauts.template')
 
-@section('title','Crear usuario')
+@section('title','Crear sintomas')
 
 @section('content')
 	<h1 class="title">Registro de estado de salud</h1>
