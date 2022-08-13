@@ -25,6 +25,11 @@ body{
     display: grid;
     place-items: center;
 }
+.container__grid--a{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
 .title{
     text-align: center;
 	margin: 0 0 5vh 0;

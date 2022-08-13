@@ -3,26 +3,32 @@
 @section('title','Index')
 
 @section('content')
+  <ul class="nav-admin__ul">
+	<li class="nav-admin__li"> <a class="nav-admin__a" href="{{route('welcome')}}">Cerrar sesión</a></li>
+  </ul>
 
-	<a href="{{route('welcome')}}">Cerrar sesión</a>
 
 	<div>Notificaciones:</div>
-	<br>
+<ul>
 	@foreach($user->notification as $notificacion)
-		<div>{{$notificacion->mensaje}}</div>
-		<br>
-	@endforeach
-	<div>Noticias:</div>
-	<br>
-	@foreach($noticias as $noticia)
-
 	
-		<p>{{$noticia->title}}</p>
-		<br>
-		<p>{{$noticia->mensaje}}</p>
+	<li>{{$notificacion->mensaje}}</li>
 		
-
-@endforeach
+	@endforeach
+</ul>
+	<div>Noticias:</div>
+<ul>
+	@foreach($noticias as $noticia)
+	<li>
+		<p>{{$noticia->title}}</p>
+		<p>{{$noticia->mensaje}}</p>
+	</li>
+	@endforeach
+</ul>
+	@foreach($noticias as $noticia)
+		<p>{{$noticia->title}}</p>
+		<p>{{$noticia->mensaje}}</p>
+	@endforeach
 
 	
 	
