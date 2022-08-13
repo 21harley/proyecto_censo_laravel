@@ -17,8 +17,16 @@
 			<div>
 			<input type="text" name="cedula">
 			</div>
+			
+			@error('cedula')
+			<div>
+				<small>No existe la cédula solicitada.</small>
+			</div>
+			@enderror
+			
 		</div>
 
+			
 				
 		<div class="pos-button">
 			<button type="submit" class="buttom-submit">Enviar formulario</button>

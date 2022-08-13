@@ -38,7 +38,7 @@ Route::get('/home', function () {
 //Para mostrar
 Route::get('users/create', [UserController::class,'create' ])->name('users.create');
 
-Route::post('admin/search', [UserController::class,'show' ])->name('users.show')->middleware('registered');
+Route::post('admin/search', [UserController::class,'show' ])->name('users.show')->middleware('cedula_exist');
 
 Route::get('users/create/menor_de_edad', [UserController::class,'create_menor'])->name('users.menor.create');
 
@@ -71,7 +71,7 @@ Route::post('publication', [PostController::class,'store'])->name('post.store');
 Route::get('notificacion/create', [NotificacionController::class,'create' ])->name('notification.create');
 
 //Ojo con el return de los stores se utiliza tambien redirect que es un metodo
-Route::post('notificacion', [NotificacionController::class,'store'])->name('notificacion.store')->middleware('registered');
+Route::post('notificacion', [NotificacionController::class,'store'])->name('notificacion.store')->middleware('cedula_exist');
 
 
 //***Prueba

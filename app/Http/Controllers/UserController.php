@@ -23,6 +23,7 @@ class UserController extends Controller
     public function show(Request $request){
 		
 		
+		
 		$user=User::find($request->id);
 		
 		
@@ -65,6 +66,8 @@ class UserController extends Controller
 		
 	public function store(Request $request){
 		
+		
+		
 		$user=new User();
 		$user->nombre= "N/D";
 		$user->apellido="N/D";
@@ -102,9 +105,10 @@ class UserController extends Controller
 	
 	public function loged(Request $request){
 		
+		$user =User::where('correo',$request->correo)->first();
 		
 		
-		return $request;
+			return redirect()->route('create.sintomas',compact('user'));	
 
 		
 	}

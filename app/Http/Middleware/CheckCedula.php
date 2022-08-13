@@ -18,34 +18,30 @@ class CheckRegistered
     public function handle(Request $request, Closure $next)
     {
 		
-		$user =User::where('correo',$request->correo)->first();
+		$user_cedula=User::where('cedula',$request->cedula)->first();
 		
-		if($user==null){
 		
-		$aux=null;
-	
-		$request->validate([
+		//$user =User::where('correo//',$request->correo)->first();
 		
-			'correo' => 'required|in:'.$aux,
-		
-		]);
+			if(!$user_cedula==null){
+				$request->request->add(['id' => $user_cedula->id]);
+				return $next($request);
 		}
+		
+		
+		
 		else{
+			
+			$aux=null;
+			
+			$request->validate([
 		
-		$request->validate([
+			'cedula' => 'required|in:'.$aux,
 		
-			'clave' => 'required|in:'.$user->clave,
-		
-		]);
+			]);
+			
+			
 		}
-		
-		if($user->admin==1)	{
-			return redirect()->route('admins.index');
-		}
-		else{
-			return $next($request);
-		}
-		
 		
 	
 		

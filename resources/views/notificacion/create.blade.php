@@ -25,6 +25,8 @@
 			<div>
 				<input  type="text" name="cedula" required>
 			</div>
+			
+			
 		
 		</div>
 		<div class="pos-button">

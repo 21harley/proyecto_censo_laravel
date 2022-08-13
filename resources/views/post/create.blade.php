@@ -28,6 +28,11 @@
 			</div>
 			
 			
+			@error('cedula')
+			<div>
+				<small>No existe la cédula solicitada</small>
+			</div>
+			@enderror
 		
 		
 		</div>
