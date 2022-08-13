@@ -92,6 +92,6 @@ class SintomaController extends Controller
 		
 	
 		
-		return $request;
+		return redirect()->route('users.index',compact('user'));
 	}
 }

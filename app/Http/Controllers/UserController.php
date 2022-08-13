@@ -35,14 +35,20 @@ class UserController extends Controller
 		return view('users.create');
 	}
 	
-	public function create_menor(){
+	public function create_menor(User $user){
 		
-		$request=session('status');
-		return view('users.create_menor',compact('request'));
+	
+		
+		return view('users.create_menor',compact('user'));
 	}
 	
-	public function store_menor(Request $request){
+	public function store_menor(Request $request,User $user){
 	
+		
+			$request->validate([
+			'cedula' => 'required|numeric'
+		]);
+		
 		$useraux=new User();
 		$useraux->nombre=$request->nombre;
 		$useraux->apellido=$request->apellido;
@@ -55,23 +61,25 @@ class UserController extends Controller
 		$useraux->tele_movil=$request->tele_movil;
 		$useraux->admin="0";
 	
-		$useraux->save();
-		
-		return view('welcome');
+		return redirect()->route('welcome');
 	
 		
 		
 	}
-		
+	
+	public function store_personal(User $user){
+		$age=18;
+		return view('users.create_menor',compact('user','age'));
+	}
+	
 	public function store(Request $request){
-		
 		
 		
 		$user=new User();
 		$user->nombre= "N/D";
 		$user->apellido="N/D";
 		$user->clave=$request->clave;
-		$user->cedula=$request->cedula;
+		$user->cedula="N/D";
 		$user->correo=$request->correo;
 		$user->dire_municipio="N/D";
 		$user->dire_localidad="N/D";
@@ -79,13 +87,17 @@ class UserController extends Controller
 		$user->tele_movil="N/D";
 		$user->admin="0";
 	
-		
-	
-		
-		
 		$user->save();
 		
-		return view('welcome');
+		
+		
+		if(isset($request->age)){
+			return redirect()->route('users.menor.create',compact('user'));
+		}
+		else{
+			return redirect()->route('users.store.personal',compact('user'));
+		}
+		
 	}
 	
 	public function login(){

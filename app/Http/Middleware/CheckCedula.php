@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class CheckRegistered
+class CheckCedula
 {
     /**
      * Handle an incoming request.
