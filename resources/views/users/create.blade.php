@@ -16,9 +16,6 @@
 				<label>Clave*: </label><input type="text" name="clave" required>
 			</div>
 			<div>
-				<label>Repetir Clave*:	</label><input  type="text" name="re_clave" required>
-			</div>
-			<div>
 				<label>Cedula*:	</label><input  type="text" name="cedula" required>
 			</div>
 

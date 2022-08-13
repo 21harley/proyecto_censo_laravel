@@ -47,7 +47,6 @@ class UserController extends Controller
 		$useraux->nombre=$request->nombre;
 		$useraux->apellido=$request->apellido;
 		$useraux->clave=$request->clave;
-		$useraux->re_clave=$request->re_clave;
 		$useraux->cedula=$request->cedula;
 		$useraux->correo=$request->correo;
 		$useraux->dire_municipio=$request->dire_municipio;
@@ -72,7 +71,6 @@ class UserController extends Controller
 		$user->nombre= "N/D";
 		$user->apellido="N/D";
 		$user->clave=$request->clave;
-		$user->re_clave=$request->re_clave;
 		$user->cedula=$request->cedula;
 		$user->correo=$request->correo;
 		$user->dire_municipio="N/D";
