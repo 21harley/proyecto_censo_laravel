@@ -8,10 +8,23 @@
 
 
     </head>
-    <body class="antialiased">
-        
-		<a href="{{route('users.login')}}">Iniciar sesión</a>
-		<a href="{{route('users.create')}}">Registro</a>
+    <body class="antialias">
+
+    <div class="container__grid--welcome">
+      <div class="container__grid">
+        <div class="posicion-esfera">
+          <div class="esfera-color-1"></div>
+          <div class="esfera-color-2"><h1>Welcome Tachira</h1></div>
+          <div class="esfera-color-3"></div>
+        </div>
+      </div>
+     <button class="buttom-submit">
+      <a class="button-link" href="{{route('users.login')}}">Iniciar sesión</a>
+     </button>
+     <button class="buttom-submit"> 
+      <a class="button-link" href="{{route('users.create')}}">Registro</a>
+     </button>
+    </div>
 		
     </body>
 </html>

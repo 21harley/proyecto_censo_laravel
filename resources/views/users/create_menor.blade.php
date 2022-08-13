@@ -30,7 +30,6 @@
 				
 			<input  type="hidden" name="correo" value="{{$request->correo}}">
 			<input  type="hidden" name="clave" value="{{$request->clave}}">
-			<input type="hidden" name="re_clave" value="{{$request->re_clave}}">
 			<input  type="hidden" name="cedula" value="{{$request->cedula}}">
 		
 		
